@@ -28,18 +28,42 @@
                 };
                 <!-- exam 12-5 기본적인 폼 유효성 체크-->
                 $scope.addUser = function(userDetails) {
-                    $scope.message = userDetails.name + " (" + userDetails.email + ") (" + userDetails.agreed + ")";
-                }
+                    console.log("add user: " + userDetails.name + myFrom.$valid);
+                    if(myForm.$valid) {
+                        $scope.message = userDetails.name + " (" + userDetails.email + ") (" + userDetails.agreed + ")";
+                        console.log("generate message: " + $scope.message);
+                    } else {
+                        console.log("change validation: ");
+                        $scope.showValidation  = true;
+                    }
+                };
+
                 $scope.message = "Ready";
+
+                <!-- 12-9 유효성 피드백 통합 -->
+                $scope.getError = function(error) {
+                    if(angular.isDefined(error)) {
+                        if(error.required) {
+                            return "Please enter a value";
+                        } else if(error.email) {
+                            return "Please enter a valid email address";
+                        }
+                    }
+                };
             });
     </script>
-    <!-- 12-6 -->
+
     <style>
+        /* 12-6
         form .ng-invalid-required.ng-dirty { background-color: lightpink; }
         form .ng-invalid-email.ng-dirty { background-color: lightgoldenrodyellow;}
         form .ng-valid.ng-dirty { background-color: lightgreen; }
         span.summary.ng-invalid { color: red; font-weight: bold; }
         span.summary.ng-valid { color: green; }
+        */
+        /* 12-9 */
+        form.validate .ng-invalid-required.ng-dirty { background-color: lightpink; }
+        form.validate .ng-invalid-email.ng-dirty { background-color: lightgoldenrodyellow; }
         div.error { color: red; font-weight: bold; }
     </style>
 
@@ -105,8 +129,9 @@
     $invalid : 내용이 유효하지 않을 경우 true
     $error : 상세 정보 제공
     -->
+    <!-- novalidate: 브라우저에서의 검증 중단-->
     <h4 class="text-success"> # exam.12-5,6,7,8</h4>
-    <form name="myForm" ng-submit="addUser(newUser)" novalidate> <!--novalidate: 브라우저에서의 검증 중단-->
+    <form name="myForm" ng-submit="addUser(newUser)" novalidate ng-class="showValidation ? 'validate': ''">
         <div class="well">
             <div class="form-group">
                 <label>Name:</label>
@@ -116,9 +141,12 @@
                 <label>Email:</label>
                 <input type="email" name="userEmail" class="form-control" ng-model="newUser.email" required />
                 <!-- 12-8 -->
-                <div class="error" ng-show="myForm.userEmail.$invalid && myForm.userEmail.$dirty">
+                <div class="error" ng-show="showValidation">
+                    {{getError(myForm.userEmail.$error)}}
+                    <!--
                     <span ng-show="myForm.userEmail.$error.email">Please enter a vaild email address</span>
                     <span ng-show="myForm.userEmail.$error.required">Please enter a value</span>
+                    -->
                 </div>
             </div>
             <div class="checkbox">
@@ -136,7 +164,7 @@
                 <div>
                     Valid:
                     <!-- 12-6 -->
-                    <span class="summary" ng-class="myForm0valid ? 'ng-valid' : 'ng-invalid'">
+                    <span class="summary" ng-class="myForm.$valid ? 'ng-valid' : 'ng-invalid'">
                         {{myForm.$valid}}
                     </span>
                 </div>
