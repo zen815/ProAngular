@@ -10,6 +10,7 @@
         angular.module("exampleApp", [])
             .controller("defaultCtrl", function($scope) {
                 $scope.todos = [
+<<<<<<< Updated upstream
                     {action: "Get groceries", complete: false},
                     {action: "Call plumber", complete: false},
                     {action: "Buy running shoes", complete: true},
@@ -49,6 +50,19 @@
                             return "Please enter a valid email address";
                         }
                     }
+=======
+                    { action: "Get groceries", complete: false},
+                    { action: "Call plumber", complete: false},
+                    { action: "Buy running shoes", complete: true},
+                    { action: "Buy flowers", complete: false},
+                    { action: "Call family", complete: false}];
+                <!-- 12-3 -->
+                $scope.addNewItem = function (newItem) {
+                    $scope.todos.push({
+                        action: newItem.action + " (" + newItem.location + ")",
+                        complete: false
+                    });
+>>>>>>> Stashed changes
                 };
             });
     </script>
@@ -76,6 +90,7 @@
     </h3>
     <div class="row">
         <div class="col-xs-6">
+<<<<<<< Updated upstream
             <h4 class="text-success"> # exam.12-3</h4>
             <div class="well">
                 <div class="form-group row">
@@ -91,6 +106,13 @@
                     </select>
                 </div>
                 <button class="btn btn-primary btn-block" ng-click="addNewItem(newTodo)">Add</button>
+=======
+            <div class="well">
+                <div class="form-group row">
+                    <label for="actionText">Action:</label>
+                    <input  id="actionText" class="form-control" ng-model="newTodo.action"/>
+                </div>
+>>>>>>> Stashed changes
             </div>
         </div>
         <div class="col-xs-6">
@@ -104,13 +126,21 @@
                 </tr>
                 </thead>
                 <tbody>
+<<<<<<< Updated upstream
                 <tr ng-repeat="item in todos" class="warning">
+=======
+                <tr ng-repeat="item in todos">
+>>>>>>> Stashed changes
                     <td>{{$index+1}}</td>
                     <td>{{item.action}}</td>
                     <td>{{item.complete}}</td>
                 </tr>
                 <td></td><td></td><td></td>
+<<<<<<< Updated upstream
                 <tr ng-repeat="item in todos" class="info">
+=======
+                <tr ng-repeat="item in todos">
+>>>>>>> Stashed changes
                     <td>{{$index+1}}</td>
                     <td>{{item.action}}</td>
                     <td>
@@ -121,6 +151,7 @@
             </table>
         </div>
     </div>
+<<<<<<< Updated upstream
     <!-- exam. 12-5 -->
     <!--
     $pristine: 사용자가 엘리먼트/폼을 건드리지 않은 경우 true
@@ -171,6 +202,10 @@
             </div>
         </div>
     </form>
+=======
+
+
+>>>>>>> Stashed changes
 </div>
 </body>
 </html>
