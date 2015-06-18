@@ -1,0 +1,16 @@
+<form name="Form12_12" novalidate>
+    <div class="well">
+        <div class="form-group">
+            <label>text:</label>
+            <input name="sample" class="form-control" ng-model="inputValue" ng-required="requireValue"
+                   ng-minlength="3" ng-maxlength="10" ng-pattern="matchPattern"/>
+        </div>
+    </div>
+    <div class="well">
+        <p>Required Error: {{Form12_12.sample.$error.required}}</p>
+        <p>Min Length Error: {{Form12_12.sample.$error.minlength}}</p>
+        <p>Max Length Error: {{Form12_12.sample.$error.maxlength}}</p>
+        <p>Pattern Error: {{Form12_12.sample.$error.pattern}}</p>
+        <p>Element Valid: {{Form12_12.sample.$error.$valid}}</p>
+    </div>
+</form>
