@@ -7,11 +7,11 @@ angular.module("exampleApp", [])
         $scope.viewChapter={};
 
         $scope.todos = [
-            {action: "Get groceries", complete: false},
-            {action: "Call plumber", complete: false},
-            {action: "Buy running shoes", complete: true},
-            {action: "Buy flowers", complete: false},
-            {action: "Call family", complete: false}
+            {id: 100, place: "Store", action: "Get groceries", complete: false},
+            {id: 200, place: "Store", action: "Call plumber", complete: false},
+            {id: 300, place: "Home", action: "Buy running shoes", complete: true},
+            {id: 400, place: "Home", action: "Buy flowers", complete: false},
+            {id: 500, place: "Office", action: "Call family", complete: false}
         ];
         // exam 12-3
         $scope.addNewItem = function (newItem) {

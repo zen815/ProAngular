@@ -1,0 +1,47 @@
+<form name="Form12_12" novalidate>
+    <h4 class="text-success"> # exam.12-12 ($error)</h4>
+    <div class="well">
+        <div class="form-group">
+            <label>text:</label>
+            <input name="sample1" class="form-control" ng-model="inputValue1" ng-required="requireValue"
+                   ng-minlength="3" ng-maxlength="10" ng-pattern="matchPattern"/>
+        </div>
+    </div>
+    <div class="well">
+        <p>Required Error  : {{Form12_12.sample1.$error.required}}</p>
+        <p>Min Length Error: {{Form12_12.sample1.$error.minlength}}</p>
+        <p>Max Length Error: {{Form12_12.sample1.$error.maxlength}}</p>
+        <p>Pattern Error   : {{Form12_12.sample1.$error.pattern}}</p>
+        <p>Element Valid   : {{Form12_12.sample1.$error.$valid}}</p>
+    </div>
+    <h4 class="text-success"> # exam.12-13 (ng-true_value, ng-false-value)</h4>
+    <div class="well">
+        <div class="checkbox">
+            <label>
+                <input type="checkbox" name="sample2"
+                       ng-model="inputValue2" ng-true-value="'체크됬네'" ng-false-value="'체크혀'"/>
+                This is a checkbox
+            </label>
+        </div>
+        <div class="well">
+            <p>Model Value: {{inputValue2}} </p>
+        </div>
+    </div>
+
+    <h4 class="text-success"> # exam.12-14 (ng-options)</h4>
+
+    <div class="well">
+        <div class="form-group">
+            <label>Select an Action:</label>
+            <!-- <select ng-model="selectValue1" ng-options="item.action for item in todos"></select> -->
+            <!-- <select ng-model="selectValue1" ng-options="item.id as item.action for item in todos"> -->
+                <select ng-model="selectValue1" ng-options="item.action group by item.place for item in todos">
+                <option value="">(선택하세요)</option>
+            </select>
+            
+        </div>
+    </div>
+    <div class="well">
+        <p>Selected: {{selectValue1 || 'None'}}</p>
+    </div>
+</form>

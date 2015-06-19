@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html ng-app="exampleApp">
-<head lang="en">
-    <meta charset="UTF-8">
+<head>
+    <!--<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /> -->
+    <meta charset="UTF-8" />
     <title>Forms</title>
     <link rel="stylesheet" href="/bootstrap/bootstrap.css"/>
     <link rel="stylesheet" href="/bootstrap/bootstrap-theme.css"/>
-    <link rel="stylesheet" href="ch12.1-12.11.css"/>
+    <link rel="stylesheet" href="ch12.01-12.11.css"/>
 
     <script src="/angular/angular.js"></script>
     <script src="defaultCtrl.js"></script>
@@ -16,7 +17,7 @@
     <div class="well">
         <div class="radio" ng-repeat="button in ['01-11', '12-15']">
             <label ng-cloak>
-                <input type="radio" ng-model="viewChapter.mode" value="{{button}}" ng-checked="$first"></input>
+                <input type="radio" ng-model="viewChapter.mode" value="{{button}}" ng-checked="$last"></input>
                 {{button}}
             </label>
         </div>
@@ -29,7 +30,7 @@
             <ng-include src="'ch12.12.html'"></ng-include>
         </div>
         <div ng-switch-default>
-            <ng-include src="'ch12.1-12.11.html'"></ng-include>
+            <ng-include src="'ch12.12.html'"></ng-include>
         </div>
     </div>
 </div>
