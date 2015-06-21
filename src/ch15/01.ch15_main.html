@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html ng-app="ch15App">
+<head>
+    <meta charset="UTF-8">
+    <title>Chapter 15 (custom directive)</title>
+    <link rel="stylesheet" href="/bootstrap/bootstrap.css"/>
+    <link rel="stylesheet" href="/bootstrap/bootstrap-theme.css"/>
+    <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+    <script src="/angular/angular.js"></script>
+    <script src="01.ch15_main.js"></script>
+    <script src="02.ch15_first.js"></script>
+    <script src="03.ch15_second.js"></script>
+    <style>
+        .bold { font-weight: bold; }
+    </style>
+</head>
+<body ng-controller="viewCtrl">
+<div class="well">
+    <div class="radio" ng-repeat="button in viewChapterList">
+        <label ng-cloak>
+            <input type="radio" ng-model="viewChapter.mode" value="{{button}}" ng-checked="$first">{{button}}</input>
+        </label>
+    </div>
+</div>
+<div >
+    <ng-include src="viewHTML()"></ng-include>
+</div>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html ng-app="ch14App">
+<head>
+    <meta charset="UTF-8">
+    <title>Chapter 14 (Filters)</title>
+    <link rel="stylesheet" href="/bootstrap/bootstrap.css"/>
+    <link rel="stylesheet" href="/bootstrap/bootstrap-theme.css"/>
+    <script src="/angular/angular.js"></script>
+    <script src="/angular-i18n/angular-locale_ko-kr.js"></script>
+    <script src="01.ch14_main.js"></script>
+</head>
+<body ng-controller="viewCtrl">
+<div class="well">
+    <div class="radio" ng-repeat="button in ['01-24']">
+        <label ng-cloak>
+            <input type="radio" ng-model="viewChapter.mode" value="{{button}}" ng-checked="$last">{{button}}</input>
+        </label>
+    </div>
+</div>
+<div ng-switch on="viewChapter.mode">
+    <div ng-switch-when="01-24">
+        <script src="02.ch14_first.js"></script>
+        <ng-include src="'02.ch14_first.html'"></ng-include>
+    </div>
+    <div ng-switch-default>
+        <script src="02.ch14_first.js"></script>
+        <ng-include src="'02.ch14_first.html'"></ng-include>
+    </div>
+</div>
+</body>
+</html>
