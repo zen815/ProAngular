@@ -1,0 +1,43 @@
+<div class="panel panel-default" ng-controller="ch16FirstCtrl">
+    <div class="panel-heading">
+        <h3>Products</h3>
+    </div>
+    <div class="panel-body">
+        <h5 class="text-success"> # exam.16-3</h5>
+        <!-- attribute type -->
+        <div unordered-list="products" list-property="price | currency"></div>
+    </div>
+    <div class="panel-body">
+        <h5 class="text-success"> # exam.16-4</h5>
+        <!-- element type -->
+        <unordered-list list-source="products" list-property="price | currency" />
+    </div>
+    <div class="panel-body">
+        <h5 class="text-success"> # exam.16-5</h5>
+        <!-- class attribute type -->
+        <div class="unordered-list: products" list-property="price | currency"></div>
+    </div>
+    <div class="panel-body">
+        <h5 class="text-success"> # exam.16-6</h5>
+        <!-- comment type -->
+        <!-- directive: unordered-list products -->
+    </div>
+    <div class="panel-body">
+        <h5 class="text-success"> # exam.16-7 (use template)</h5>
+        <div use-template="products">
+            This is where the list will go
+        </div>
+    </div>
+    <div class="panel-body">
+        <h5 class="text-success"> # exam.16-8 (use template function)</h5>
+        <div use-template2="products">
+            This is where the list will go
+        </div>
+    </div>
+    <div class="panel-body">
+        <h5 class="text-success"> # exam.16-9 (use External Template)</h5>
+        <div use-template3="products">
+            This is where the list will go
+        </div>
+    </div>
+</div>

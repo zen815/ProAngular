@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html ng-app="ch16App">
+<head>
+    <meta charset="UTF-8">
+    <title>Chapter 16 (Creating Complex Directives)</title>
+    <link rel="stylesheet" href="/bootstrap/bootstrap.css"/>
+    <link rel="stylesheet" href="/bootstrap/bootstrap-theme.css"/>
+    <script src="/angular/angular.js"></script>
+    <script src="01.ch16_main.js"></script>
+    <script src="02.ch16_first.js"></script>
+    <script type="text/template" id="listTemplate">
+        <ul>
+            <li ng-repeat="item in data">{{item.price | currency}}</li>
+        </ul>
+    </script>
+</head>
+<body ng-controller="viewCtrl">
+<div class="well">
+    <div class="radio" ng-repeat="button in viewChapterList">
+        <label ng-cloak>
+            <input type="radio" ng-model="selectButton.mode" value="{{button}}" ng-checked="$first">{{button}}</input>
+        </label>
+    </div>
+</div>
+<div >
+    <ng-include src="viewHTML()"></ng-include>
+</div>
+</body>
+</html>
