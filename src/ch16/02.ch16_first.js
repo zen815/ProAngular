@@ -59,6 +59,22 @@ angular.module("ch16App")
                 scope.data = scope[attrs["useTemplate3"]];
             },
             restrict: "A",
-            templateUrl:"itemTemplate_ch16-9.html"
+            templateUrl:  "itemTemplate_ch16-9.html"
+        }
+    })
+    .directive("useTemplate4", function(){
+        return {
+            link: function(scope, element, attrs) {
+                scope.data = scope[attrs["useTemplate3"]];
+            },
+            restrict: "A",
+            templateUrl: "tableTemplate_ch16-12.html"
+              //function(element, attrs) {
+               // return "itemTemplate_ch16-9.html";
+                /*return attrs["template1"] === "tables" ?
+                  "tableTemplate_ch16-12.html" : "itemTemplate_ch16-9.html";
+                  */
+            //}
+
         }
     });
