@@ -1,0 +1,11 @@
+<div class="panel panel-default" ng-controller="ch16ThirdCtrl">
+    <div class="panel-body" scope-demo></div>
+    <div class="panel-body" scope-demo></div>
+
+    <h5 class="text-success"> # exam.16-21</h5>
+    <div class="panel-body">
+        Direct Binding: <input ng-model="data.name" />
+    </div>
+    <div class="panel-body" scope-demo nameprop="{{data.name}}"></div>
+    <div class="panel-body" scope-demo nameprop="{{data.name + 'Freeman'}}"></div>
+</div>

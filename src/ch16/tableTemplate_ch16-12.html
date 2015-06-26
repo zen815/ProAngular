@@ -1,12 +1,13 @@
-<p>tableTemplate_ch16_12.html</p>
-<table>
-    <thead>
-    <tr><th>Name</th><th>Price</th></tr>
-    </thead>
-    <tbody>
-    <tr ng-repeat="item in data">
-        <td>{{item.name}}</td>
-        <td>{{item.price | currency}}</td>
-    </tr>
-    </tbody>
-</table>
+<div class="table table-striped"> <!-- error solution: template for directive must have exactly one root element. -->
+    <table>
+        <thead>
+        <tr><th>Name</th><th>Price</th></tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="item in data">
+            <td>{{item.name}}</td>
+            <td>{{item.price | currency}}</td>
+        </tr>
+        </tbody>
+    </table>
+</div>

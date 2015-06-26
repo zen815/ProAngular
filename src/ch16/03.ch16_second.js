@@ -57,9 +57,19 @@ angular.module("ch16App")
       },
       restrict: "A",
       templateUrl: function (element, attrs) {
-        console.log(attrs["template"]);
         return attrs["template"] == "table" ?
           "tableTemplate_ch16-12.html" : "itemTemplate_ch16-9.html";
       }
+    }
+  })
+  .directive("useTemplate1",function(){
+    // http://stackoverflow.com/questions/19233372/template-must-have-exactly-one-root-element-with-custom-directive-replace-true
+    return {
+      link: function(scope, element, attrs) {
+        scope.data = scope[attrs["useTemplate1"]];
+      },
+      restrict: "A",
+      templateUrl: "tableTemplate_ch16-12.html",
+      replace: true
     }
   });

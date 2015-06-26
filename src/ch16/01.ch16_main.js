@@ -3,7 +3,7 @@
  */
 angular.module("ch16App", [])
     .controller("viewCtrl", function($scope){
-        $scope.viewChapterList = ['first','second','third];
+        $scope.viewChapterList = ['first','second','third'];
         $scope.viewChapter = {};
         $scope.viewChapter.mode = $scope.viewChapterList[0];
 
@@ -15,6 +15,9 @@ angular.module("ch16App", [])
                     break;
                 case $scope.viewChapterList[1]:
                     retFile = "03.ch16_second.html";
+                    break;
+                case $scope.viewChapterList[2]:
+                    retFile = "04.ch16_third.html";
                     break;
                 default :
                     retFile = "02.ch16_first.html";

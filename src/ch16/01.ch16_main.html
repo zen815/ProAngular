@@ -9,10 +9,23 @@
     <script src="01.ch16_main.js"></script>
     <script src="02.ch16_first.js"></script>
     <script src="03.ch16_second.js"></script>
+    <script src="04.ch16_third.js"></script>
     <script type="text/template" id="listTemplate">
         <ul>
             <li ng-repeat="item in data">{{item.price | currency}}</li>
         </ul>
+    </script>
+    <script type="text/ng-template" id="scopeTemplate">
+        <div class="panel-body">
+            <p>Name: <input ng-model="data.name" /></p>
+            <p>City: <input ng-model="city" /></p>
+            <p>Country: <input ng-model="country" /></p>
+        </div>
+    </script>
+    <script type="text/ng-template" id="scopeTemplate2">
+        <div class="panel-body">
+            <p>Data Value: {{local}}</p>
+        </div>
     </script>
 </head>
 <body ng-controller="viewCtrl">
