@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html ng-app="ch17App">
+<head>
+    <meta charset="UTF-8">
+    <title>Chapter 17 (Advanced Directive Features)</title>
+    <link rel="stylesheet" href="/bootstrap/bootstrap.css"/>
+    <link rel="stylesheet" href="/bootstrap/bootstrap-theme.css"/>
+    <script src="/angular/angular.js"></script>
+    <script src="01.ch17_main.js"></script>
+    <script src="02.ch17_first.js"></script>
+    <script type="text/ng-template" id="template">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4>This is the panel</h4>
+            </div>
+            <div class="panel-body" ng-transclude>
+            </div>
+        </div>
+    </script>
+</head>
+<body ng-controller="viewCtrl">
+<div class="well">
+    <div class="radio" ng-repeat="button in viewChapterList">
+        <label ng-cloak>
+            <input type="radio" ng-model="viewChapter.mode" value="{{button}}" ng-checked="$first">{{button}}</input>
+        </label>
+    </div>
+</div>
+<div>
+    <ng-include src="viewHTML()"></ng-include>
+</div>
+</body>
+</html>
