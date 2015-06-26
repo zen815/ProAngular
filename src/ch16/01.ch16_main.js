@@ -3,7 +3,7 @@
  */
 angular.module("ch16App", [])
     .controller("viewCtrl", function($scope){
-        $scope.viewChapterList = ['first','second'];
+        $scope.viewChapterList = ['first','second','third];
         $scope.viewChapter = {};
         $scope.viewChapter.mode = $scope.viewChapterList[0];
 

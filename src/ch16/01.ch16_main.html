@@ -8,6 +8,7 @@
     <script src="/angular/angular.js"></script>
     <script src="01.ch16_main.js"></script>
     <script src="02.ch16_first.js"></script>
+    <script src="03.ch16_second.js"></script>
     <script type="text/template" id="listTemplate">
         <ul>
             <li ng-repeat="item in data">{{item.price | currency}}</li>
@@ -18,11 +19,11 @@
 <div class="well">
     <div class="radio" ng-repeat="button in viewChapterList">
         <label ng-cloak>
-            <input type="radio" ng-model="selectButton.mode" value="{{button}}" ng-checked="$first">{{button}}</input>
+            <input type="radio" ng-model="viewChapter.mode" value="{{button}}" ng-checked="$first">{{button}}</input>
         </label>
     </div>
 </div>
-<div >
+<div>
     <ng-include src="viewHTML()"></ng-include>
 </div>
 </body>
