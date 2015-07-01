@@ -1,0 +1,16 @@
+<div ng-controller="thirdCtrl">
+    <div><tri-button ng-model="dataValue" /></div>
+    <div class="well">
+        Value:
+        <select ng-model="dataValue">
+            <option>Yes</option>
+            <option>No</option>
+            <option>Not Sure</option>
+            <option>Huh?</option>
+        </select>
+    </div>
+
+    <form name="myForm" novalidate>
+        <div><tri-button name="decision" ng-model="dataValue" /></div>
+    </form>
+</div>

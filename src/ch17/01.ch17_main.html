@@ -8,6 +8,8 @@
     <script src="/angular/angular.js"></script>
     <script src="01.ch17_main.js"></script>
     <script src="02.ch17_first.js"></script>
+    <script src="03.ch17_second.js"></script>
+    <script src="04.ch17_third.js"></script>
     <script type="text/ng-template" id="template">
         <div class="panel panel-default">
             <div class="panel-heading">
@@ -17,6 +19,26 @@
             </div>
         </div>
     </script>
+    <!-- 17-3 -->
+    <script type="text/ng-template" id="productTemplate">
+        <td>{{item.name}}</td>
+        <td><input ng-model='item.quantity' /></td>
+    </script>
+    <!-- 17-6 -->
+    <script type="text/ng-template" id="triTemplate">
+        <div class="well">
+            <div class="btn-group">
+                <button class="btn btn-default">Yes</button>
+                <button class="btn btn-default">No</button>
+                <button class="btn btn-default">Not Sure</button>
+            </div>
+            <span class="error" ng-show="myForm.decision.$error.confidence">You need to be sure</span>
+        </div>
+    </script>
+    <!-- 17-11 -->
+    <style>
+        *.error { color: red; font-weight: bold; }
+    </style>
 </head>
 <body ng-controller="viewCtrl">
 <div class="well">
@@ -26,7 +48,7 @@
         </label>
     </div>
 </div>
-<div>
+<div class="panel panel-body">
     <ng-include src="viewHTML()"></ng-include>
 </div>
 </body>

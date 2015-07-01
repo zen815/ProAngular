@@ -14,7 +14,8 @@ app.directive("panel", function(){
       scope.dataSource = "directive";
     },
     restrict: "E",
-    scope: true,
+    // scope: true, // controller's $scope.dataSource
+    scope: false,  // directive's $scope.dataSource
     template: function() {
       return angular.element(
         document.querySelector("#template") ).html();

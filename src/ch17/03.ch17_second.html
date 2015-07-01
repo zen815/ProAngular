@@ -1,0 +1,23 @@
+<div class="secondCtrl">
+    <table class="table table-striped">
+        <thead><tr><th>Name</th><th>Price</th></tr></thead>
+        <tbody>
+        <tr simple-repeater source="products" item-name="item">
+            <td>{{item.name}}</td><td>{{item.price | currency}}</td>
+        </tr>
+        </tbody>
+    </table>
+    <button class="btn btn-default text" ng-click="changeData()">Change</button>
+
+    <!-- 17-3 -->
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <table class="table table-striped" product-table="totalValue"
+                   product-data="products" ng-transclude>
+                <tr><th>Name</th><th>Quantity</th></tr>
+                <tr ng-repeat="item in products" product-item></tr>
+                <tr><th>Total:</th><td>{{totalValue}}</td></tr>
+            </table>
+        </div>
+    </div>
+</div>
